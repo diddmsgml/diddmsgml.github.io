@@ -1,37 +1,45 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>라이트박스</title>
+    <link rel="stylesheet" href="css/lightbox.css">
+  </head>
+  <body>
+    <div class="row">
+      <ul>
+        <li><img src="images/tree-1-thumb.jpg" data-src="images/tree-1.jpg" class="pic"></li>
+        <li><img src="images/tree-2-thumb.jpg" data-src="images/tree-2.jpg" class="pic"></li>
+        <li><img src="images/tree-3-thumb.jpg" data-src="images/tree-3.jpg" class="pic"></li> 
+        <li><img src="images/tree-4-thumb.jpg" data-src="images/tree-4.jpg" class="pic"></li>
+        <li><img src="images/tree-5-thumb.jpg" data-src="images/tree-5.jpg" class="pic"></li>
+        <li><img src="images/tree-6-thumb.jpg" data-src="images/tree-6.jpg" class="pic"></li>          
+      </ul>    
+    </div>
 
-You can use the [editor on GitHub](https://github.com/diddmsgml/diddmsgml.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+    <div id="lightbox">
+			<img src="images/tree-1.jpg" alt="" id="lightboxImage">			
+    </div>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+    <script>
+      var pics = document.getElementsByClassName("pic"); // .pic인 요소들을 가져와 pics 라는 변수에 저장. querySelectorAll(".pic")도 가능
+      var lightbox = document.getElementById("lightbox");  // 라이트 박스. querySelector("#lightbox")도 가능
+      var lightboxImage = document.getElementById("lightboxImage");  // 라이트 박스 안의 이미지. querySelector("#lightboxImage")도 가능
 
-### Markdown
+      for (i=0; i<pics.length; i++) {
+        pics[i].addEventListener("click", showLightbox);
+      }
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/diddmsgml/diddmsgml.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+      function showLightbox() {
+				var bigLocation = this.getAttribute("data-src"); // bigLocation = this.data-src; 도 가능.
+				lightboxImage.setAttribute("src", bigLocation);  // lightboxImage.src = bigLocation; 도 가능.
+				lightbox.style.display = "block";  // 라이트박스 이미지를 화면에 표시
+      }
+      
+      lightbox.onclick = function() {  //click 이벤트가 발생했을 때 실행할 함수 선언
+				lightbox.style.display = "none";  // lightbox 요소를 화면에서 감춤
+      }
+    </script>
+  </body>
+</html>
