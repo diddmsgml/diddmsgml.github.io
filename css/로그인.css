@@ -1,0 +1,80 @@
+[title |= home]{
+    display: flex;
+    float: left;
+    margin: 14px 0 10px 30px;
+}
+
+input[type=image]{
+    display: flex;
+    float: left;
+    margin: 15px 0 10px 30px;
+} 
+input[type=search]{
+    width: 500px;
+    height:50px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    margin: 22px 40px 10px 40px;
+    display: flex;
+    float: right;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+input::placeholder {
+    color: gray;
+}
+.container {
+    width: 600px;
+    display: flex;
+    float: right;
+    font-size: 20px;
+    font-weight: 550;
+    margin-top: 15px;
+}
+.navi{
+    width:600px;
+}
+.navi ul{
+    list-style: none;
+}
+.navi ul li {
+    float:left;
+    width:150px;
+}
+.navi a:link, .navi a:visited{
+    display:block;
+    color:rgb(29, 29, 29);
+    height: 30px;
+    text-decoration: none;
+    text-align: center;
+}
+.navi a:hover {
+    background-color:#222;
+    color:#fff;
+}
+
+.field{
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 400px;
+    height: 100px;
+}
+
+.navi2{
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: skyblue;
+    color:white
+}
+.navi2 a:link, .navi2 a:visited{
+    display:block;
+    height: 32px;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
